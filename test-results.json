@@ -1,0 +1,50 @@
+{
+  "passed": 7,
+  "total": 7,
+  "gasSettle": "146021",
+  "gasCreate": "251900",
+  "contract": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
+  "results": [
+    {
+      "id": "TC-01",
+      "name": "KYC'd SME locks USDC in escrow",
+      "ok": true,
+      "extra": "escrow = 1000 USDC"
+    },
+    {
+      "id": "TC-02",
+      "name": "Atomic FX settle USDC->EURC @ EUR/USD 1.08",
+      "ok": true,
+      "extra": "supplier got 921.296296 EURC"
+    },
+    {
+      "id": "TC-03",
+      "name": "NEG: non-KYC payer is rejected",
+      "ok": true,
+      "extra": "reverted: \"payer not KYC\""
+    },
+    {
+      "id": "TC-04",
+      "name": "NEG: slippage guard (minOut too high) reverts",
+      "ok": true,
+      "extra": "reverted: \"slippage\""
+    },
+    {
+      "id": "TC-05",
+      "name": "Payer cancels pending payment, full refund",
+      "ok": true
+    },
+    {
+      "id": "TC-06",
+      "name": "NEG: double settle is rejected",
+      "ok": true,
+      "extra": "reverted: \"not pending\""
+    },
+    {
+      "id": "TC-07",
+      "name": "NEG: stale oracle blocks settlement",
+      "ok": true,
+      "extra": "reverted: \"stale oracle\""
+    }
+  ]
+}
